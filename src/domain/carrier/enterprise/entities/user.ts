@@ -1,7 +1,7 @@
 import { Entity } from 'src/core/entities/entity';
 import { UniqueEntityID } from 'src/core/entities/unique-entity-id';
 
-type role = 'admin' | 'deliveryMan';
+export type role = 'admin' | 'deliveryMan';
 interface UserProps {
   cpf: number;
   telephone: number;
