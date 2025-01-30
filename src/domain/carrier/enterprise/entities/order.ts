@@ -2,9 +2,11 @@ import { Entity } from 'src/core/entities/entity';
 import { UniqueEntityID } from 'src/core/entities/unique-entity-id';
 import { Optional } from 'src/core/types/optional';
 
-type status = 'Waiting' | 'Returned' | 'Delivered';
+export type status = 'Waiting' | 'Returned' | 'Delivered';
 
 interface OrderProps {
+  recipientId: UniqueEntityID;
+  userId: UniqueEntityID;
   status: status;
   items: string[];
   description: string;
@@ -12,6 +14,7 @@ interface OrderProps {
   deliveryDate: Date | null;
   deliveryPhoto: string | null;
 }
+
 export class Order extends Entity<OrderProps> {
   get status() {
     return this.props.status;
